@@ -1,11 +1,10 @@
 <?php
 
-use App\Models\Kandidat;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class PemilihTable extends Migration
+class AddMoreFieldsToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +13,12 @@ class PemilihTable extends Migration
      */
     public function up()
     {
-        Schema::create('pemilih', function (Blueprint $table) {
-            $table->id();
-            $table->string('nim')->unique();
-            $table->string('password');
-            $table->unsignedBigInteger('status');
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('nim')->unique()->after('name');
+            $table->unsignedBigInteger('status')->default('1');
             $table->foreign('status')->references('id')->on('status')->onDelete('cascade');
-            $table->timestamps();
-
-
+            $table->boolean('is_admin')->default(false);
+            $table->string('email')->nullable()->change();
         });
     }
 
@@ -33,6 +29,8 @@ class PemilihTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pemilih');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 }
