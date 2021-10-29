@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AnnouncementController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
@@ -17,29 +18,35 @@ use App\Http\Controllers\VotingController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('pages.index');
 });
 
-Auth::routes();
+Route::get('/candidate', function(){
+    return view('pages.candidate');
+});
+
+
+Route::get('/test',  function () {
+    return view('test.count');
+});
+
+Route::get('/announcement', function(){
+    return view('pages.count');
+});
+
+Route::get('/announcement/result',[AnnouncementController::class, 'index'])->name('announcement');
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//* Default Route
-//* Admin Route
-// Route::get('/admin', [DashboardController::class, 'index'])->middleware('admin');
-Route::get('/admin', [DashboardController::class, 'index']);
-
-//* Kandidat Route
-//* Pemilh Route
-Route::prefix('admin')->group(function(){
-    Route::resource('voters', PemilihController::class);
-    Route::get('voters',[PemilihController::class, 'search'])->name('search');
-});
 
 //* Voting Route
 Route::get('/vote', [VotingController::class, 'index']);
-Route::post('/vote/{id}', [VotingController::class, 'addVote'])->name('addVote');
+Route::post('/vote/ketua/{id}', [VotingController::class, 'addVoteKetua'])->name('addVoteKetua');
+Route::post('/vote/wakil/{id}', [VotingController::class, 'addVoteWakil'])->name('addVoteWakil');
 Route::post('/vote/{id}/delete', [VotingController::class, 'deleteVote'])->name('deleteVote');
 

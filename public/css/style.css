@@ -1,0 +1,155 @@
+@media screen and (min-width: 601px) {
+    .vote-text-1 {
+        font-size: 45px;
+    }
+    .secondary-text{
+        font-size: 45px;
+    }
+    .count-text{
+        font-size: 96px;
+    }
+    .count-text-2{
+        font-size: 36px;
+    }
+    .candidate-text-1{
+        line-height: 65px;
+        font-size: 48px;
+    }
+    .candidate-text-2{
+        line-height: 33px;
+        font-size: 24px;
+    }
+    .annoucement-text{
+        line-height: 50px;
+        font-size: 45px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .vote-text-1 {
+      font-size: 35px;
+    }
+    .secondary-text{
+        font-size: 35px;
+    }
+    .count-text{
+        font-size: 48px;
+    }
+    .count-text-2{
+        font-size: 28px;
+    }
+    .candidate-text-1{
+        line-height: 45px;
+        font-size: 35px;
+    }
+    .candidate-text-2{
+        line-height: 22px;
+        font-size: 16px;
+    }
+    .annoucement-text{
+        line-height: 20px;
+        font-size: 20px;
+    }
+}
+.nav-text{
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.body-text{
+    font-family: 'Poppins', sans-serif;
+}
+
+.primary-text{
+    font-weight: bold;
+    font-size: 50px;
+    color: #0a225f;
+}
+
+.secondary-text{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 56px;
+    color: #307DFB;
+}
+
+.p-text{
+    color: #0a225f;
+    text-align: justify;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.005em;
+}
+
+.count-text{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 0px;
+    color: #307DFB;
+}
+
+.count-text-2{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    color: #307DFB;
+}
+
+.annoucement-text{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    color: #307DFB;
+}
+
+.vote-text-1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 56.25px;
+    color: #0a125f;
+}
+
+.candidate-text-1{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    color: #307DFB;
+}
+
+.candidate-text-2{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    color: black;
+}
+
+.btn-vote{
+    background-color: #0F46A5;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.how{
+    width: 653px;
+    height: 110px;
+}
+
+.how-2{
+    width: 653px;
+    height: 130px;
+}
+
+.bg-footer{
+    background: linear-gradient(180deg, #307DFB 0%, #307DFB 100%);
+}
+
+.icon-red{
+    color: red;
+}

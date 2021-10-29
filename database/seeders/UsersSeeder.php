@@ -24,7 +24,8 @@ class UsersSeeder extends Seeder
             'nim' => '001',
             'password' => Hash::make('admin'),
             'email' => 'admin@mail.com',
-            'status' => 2,
+            'status_ketua' => 2,
+            'status_wakil' => 2,
             'is_admin' => 1
         ];
 
@@ -36,7 +37,8 @@ class UsersSeeder extends Seeder
                 'nim' => $faker->numerify('##########'),
                 'email' => $faker->email(),
                 'password' => Hash::make('password'),
-                'status' => $faker->randomElement([1, 2]),
+                'status_ketua' => $faker->randomElement([1, 2]),
+                'status_wakil' => $faker->randomElement([1, 2]),
             ]);
         }
     }

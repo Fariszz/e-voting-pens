@@ -16,16 +16,33 @@ class KandidatSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create('id_ID');
 
-        for ($i=1; $i <= 2 ; $i++) {
-            DB::table('kandidat')->insert([
-                'nama' => $faker->name(),
-                'visi' => $faker->text(),
-                'misi' => $faker->text(),
-                'foto' => 'test',
-                'jumlah_suara' => 0
-            ]);
-        }
+        $faker = Faker::create('id_ID');
+        $kandidat = [
+            'nama' => 'Alexander Putra',
+            'visi' => $faker->text(),
+            'misi' => $faker->text(),
+            'foto' => '/storage/images/ketua-hero-1.svg'
+        ];
+
+        $kandidat2 = [
+            'nama' => 'Alexandra Putri',
+            'visi' => $faker->text(),
+            'misi' => $faker->text(),
+            'foto' => '/storage/images/ketua-hero-2.svg'
+        ];
+
+        DB::table('kandidat')->insert($kandidat);
+        DB::table('kandidat')->insert($kandidat2);
+
+        // for ($i=1; $i <= 2 ; $i++) {
+        //     DB::table('kandidat')->insert([
+        //         'nama' => $faker->name(),
+        //         'visi' => $faker->text(),
+        //         'misi' => $faker->text(),
+        //         'foto' => 'test',
+        //         'jumlah_suara' => 0
+        //     ]);
+        // }
     }
 }
